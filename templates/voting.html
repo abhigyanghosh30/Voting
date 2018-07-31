@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VOTE</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='signin.css') }}">
+</head>
+<body>
+	<div class="cover">
+		<div class="overlay-text">
+			<div class="row">
+				{% if vote == True %}
+				<div class="col-sm-12">
+					<h1 class="text-center"> Select Your Choice</h1>
+				</div>
+				<div class="col-md-4 col-sm-12 text-center">
+					<form action="{{ url_for('team1') }}" method="POST">
+						<button type="submit" class="btn btn-primary">TEAM 1</button>
+					</form>
+				</div>
+				<div class="col-md-4 col-sm-12 text-center">
+					<form action="{{ url_for('team2') }}" method="POST">
+						<button type="submit" class="btn btn-primary">TEAM 2</button>
+					</form>
+				</div>
+				<div class="col-md-4 col-sm-12 text-center">
+					<form action="{{ url_for('team3') }}" method="POST">
+						<button type="submit" class="btn btn-primary">TEAM 3</button>
+					</form>
+				</div>
+				{% else %}
+				<div class="col-sm-12 col-md-4 text-center">
+					<h1>Thank You for Voting</h1>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
